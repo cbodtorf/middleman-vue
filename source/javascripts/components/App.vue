@@ -1,10 +1,10 @@
 <template>
   <section id="app-component">
-    <fixedHeader></fixedHeader>
+    <FixedHeader></FixedHeader>
     <div class="app-component-wrapper">
       <div class="cursel-center-tit fadein">
-        <div class="cursel-center-tit-outline"><h2 class="load">{{title}}</h2></div>
-        <div class="cursel-center-tit-base"><h2 class="load">{{title}}</h2></div>
+        <div class="cursel-center-tit-outline"><h2 class="load">{{ name }}<br><TextScrambler :text="verb"/><br><TextScrambler :text="noun"/></h2></div>
+        <div class="cursel-center-tit-base"><h2 class="load">{{ name }}<br><TextScrambler :text="verb"/><br><TextScrambler :text="noun"/></h2></div>
       </div>
 
       <div class="flexbox-container">
@@ -12,7 +12,6 @@
 
         </div>
         <div class="right">
-
         </div>
       </div>
     </div>
@@ -20,16 +19,53 @@
 </template>
 
 <script>
-  import fixedHeader from './FixedHeader.vue'
+  import FixedHeader from './FixedHeader.vue'
+  import TextScrambler from './TextScrambler.vue'
 
   export default {
     name: 'appComponent',
     data() {
       return {
-        title: 'The face of the moon was in shadow'
+        name: 'Caleb',
+        text: 'meh',
+        verb: 'Inspires',
+        noun: 'Creativity',
+        counter: 0,
+        verbs: [
+          'Inspires',
+          'Empowers',
+          'Challenges',
+          'Organizes',
+          'Loves',
+          'Codes',
+          'Plays Music With',
+          'Challenges',
+          'Churns and Burns'
+        ],
+        nouns: [
+          'Creativity',
+          'The Team',
+          'Everything',
+          'Stuff by Color',
+          'Randomizers',
+          'Like a damn boss',
+          'Sexbruise?',
+          'The Game',
+          'Turtles',
+          'Crabigator'
+        ]
       }
     },
-    components: { fixedHeader }
+    mounted: function() {
+      const self = this;
+      setInterval(() => {
+        ["noun", "verb"].forEach((key) => {
+          const arr = self[key + "s"]
+          self[key] = arr ? arr[Math.floor(Math.random()*arr.length)] : "";
+        })
+      }, 2000)
+    },
+    components: { FixedHeader, TextScrambler }
   }
 </script>
 
