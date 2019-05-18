@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Harbour';
+  src: url('../fonts/harbour_reg.ttf') format('truetype');
+}
+
 .flexbox-container {
   display:flex;
   .flex-box-item {
@@ -14,7 +19,7 @@
 }
 
 html {
-  font-family: aktiv-grotesk, sans-serif;
+  font-family: Harbour, sans-serif;
   font-weight: 800;
   font-style: normal;
   font-size:100%;
@@ -40,16 +45,28 @@ body.top {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
-  
     content: "";
     background-image: url(../images/noise.gif);
     opacity: .05;
-    z-index: 100000;
+    z-index: -1;
     pointer-events: none;
   }
-  
+
+  &:before {
+    background: repeating-linear-gradient( -45deg, #fed8f9, #fed8f9 2px, #edacf0 2px, #edacf0 4px );
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    content: "";
+    opacity: 1;
+    z-index: -1;
+    pointer-events: none;
+}
+
   &.detail {
     background-color: #1a1427;
 
@@ -69,3 +86,21 @@ body.top {
 
 .pc{display: block;}
 .sp{display: none;}
+
+.fadedown {
+  animation: fadedown 2s;
+}
+
+.fadein {
+  animation: fadein 2s;
+}
+
+@keyframes fadedown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
