@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
@@ -42,9 +43,16 @@ module.exports = {
       }
     ]
   },
+
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }
-  }
+  },
+
+  plugins: [
+    new Dotenv({
+      path: './.env'
+    })
+  ]
 };

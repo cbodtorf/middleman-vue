@@ -58,6 +58,20 @@
     },
     mounted: function() {
       const self = this;
+      const query = {
+            skip: 0,
+            limit: 10,
+          };
+
+      this.$contentful
+        .getEntries(query)
+        .then((res) => {
+          console.log("res", res)
+        })
+        .catch((error) => {
+          console.log("error", error)
+      });
+      
       setInterval(() => {
         ["noun", "verb"].forEach((key) => {
           const arr = self[key + "s"]

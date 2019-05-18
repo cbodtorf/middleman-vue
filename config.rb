@@ -15,10 +15,6 @@ configure :development do
   activate :livereload
 end
 
-activate :dato,
-  token: ENV['DATO_API_TOKEN'],
-  base_url: 'https://datocms-middleman-example.netlify.com'
-
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
