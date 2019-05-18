@@ -10,6 +10,8 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
+activate :livereload
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 

@@ -31,6 +31,6 @@
 
 .flexbox-container {
   height: 200px;
-  border: 2px solid #00c9d3;
+  border: 5px solid #00c9d3;
 }
 </style>
