@@ -10,7 +10,14 @@ activate :external_pipeline,
   source: ".tmp/dist",
   latency: 1
 
-activate :livereload
+# enable livereload on development
+configure :development do
+  activate :livereload
+end
+
+activate :dato,
+  token: ENV['DATO_API_TOKEN'],
+  base_url: 'https://datocms-middleman-example.netlify.com'
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/

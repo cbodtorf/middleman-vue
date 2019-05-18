@@ -1,4 +1,5 @@
 .bundle
+.env
 .cache
 .DS_Store
 .sass-cache
