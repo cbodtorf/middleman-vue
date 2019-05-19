@@ -1,5 +1,7 @@
 # Middleman + VueJS
 
+demo: [here](https://elated-mestorf-c7ce5d.netlify.com/)
+
 ### Core Tech:
 > [Middleman](http://middlemanapp.com)
 > [VueJS 2](https://vuejs.org/)
