@@ -8,11 +8,7 @@
       </div>
 
       <div class="flexbox-container">
-        <div class="left">
-
-        </div>
-        <div class="right">
-        </div>
+        <div class="left"></div>
       </div>
     </div>
   </section>
@@ -58,6 +54,7 @@
     },
     mounted: function() {
       const self = this;
+
       const query = {
             skip: 0,
             limit: 10,
@@ -139,8 +136,8 @@
   height: 500px;
   width: 70%;
   margin: 0 30%;
-  box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
-  background: #fed8f9;
+  // box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+  background: #4c1845;
   z-index: 1;
 
   .left, .right {
@@ -148,8 +145,12 @@
   }
 
   .left {
-    box-shadow: 0 0 15px 2px rgba(255, 183, 225, 0.377);
+    // box-shadow: 0 0 15px 2px rgba(255, 183, 225, 0.377);
     background: #fed8f9;
+    background-image: url(https://fillmurray.com/300/200);
+    background-size: cover;
+    background-position: center center;
+    filter: hue-rotate(90deg) saturate(0.5) opacity(0.3);
   }
 
   .right {
